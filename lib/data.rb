@@ -65,3 +65,5 @@ QUESTIONS = [
 ]
 
 KEYS = %w(2 1 2 1 1 2 6 3 1,3,4 3,4 6 6)
+
+MAXMINUTES = 8
