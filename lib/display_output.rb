@@ -1,4 +1,4 @@
-module Printer
+module DisplayOutput
   def hello(name)
     cls
     puts "Привет, #{name.encode('UTF-8')}"

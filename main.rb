@@ -1,9 +1,9 @@
 require_relative 'lib/logic_test'
-require_relative 'lib/printer'
+require_relative 'lib/display_output'
 require_relative 'lib/data'
 
 # Инициализируем модуль вывода на экран
-include Printer
+include DisplayOutput
 
 username = ARGV[0] == nil ? 'Анонимус' : ARGV[0]
 hello(username)
