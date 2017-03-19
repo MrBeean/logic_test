@@ -1,6 +1,4 @@
-# require_relative 'data'
-
-class Printer
+module Printer
   def hello(name)
     cls
     puts "Привет, #{name.encode('UTF-8')}"
