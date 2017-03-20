@@ -12,6 +12,15 @@ module DisplayOutput
     puts 'Не уложились! Идите учиться!!!' if waste > MAXMINUTES
   end
 
+  def display_question(question)
+    puts "\n#{question[0]}\n"
+    puts 'Варианты ответов (можно указать несколько через запятую)'
+  end
+
+  def display_variant(answer_variant, index)
+    puts "#{index}: #{answer_variant}"
+  end
+
   def result(score)
     result = case score
              when 0..2

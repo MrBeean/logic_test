@@ -1,5 +1,5 @@
-require_relative 'lib/logic_test'
 require_relative 'lib/display_output'
+require_relative 'lib/logic_test'
 require_relative 'lib/data'
 
 # Инициализируем модуль вывода на экран
