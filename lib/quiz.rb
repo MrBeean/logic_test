@@ -33,7 +33,7 @@ class Quiz
     if waste?(start_time)
       abort 'Не уложились! Идите учиться!!!'
     else
-      @waste_time = start_time - Time.now.min
+      @waste_time = Time.now.min - start_time
     end
 
     check_score(user_answers)
@@ -54,7 +54,7 @@ class Quiz
   end
 
   def waste?(start_time)
-    start_time - Time.now.min > MAX_MINUTES
+    Time.now.min - start_time > MAX_MINUTES
   end
 
   def user_result
