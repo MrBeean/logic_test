@@ -1,16 +1,16 @@
-require_relative 'lib/display_output'
-require_relative 'lib/logic_test'
+require_relative 'lib/quiz'
 require_relative 'lib/data'
 
-# Инициализируем модуль вывода на экран
-include DisplayOutput
-
 username = ARGV[0] == nil ? 'Анонимус' : ARGV[0]
-hello(username)
+puts "Привет, #{username.encode('UTF-8')}"
+puts "Тест на логику вашего мышления. У вас есть 8 минут на 12 вопросов!\n"
 
-# Запускаем сам тест
-testing = LogicTest.new
+quiz = Quiz.create
 
-# Выводим результаты теста
-minutes_spent(testing.start_time)
-result(testing.score)
+quiz.start_quiz
+
+# # puts "Вы потратили на тест: #{quiz.waste_time} мин."
+# # puts "Ваш результат:\n"
+# # RESULT.each do |score_range, result|
+# #   puts result if score_range.include?(quiz.score)
+# end
