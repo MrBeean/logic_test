@@ -1,20 +1,32 @@
 class Quiz
   attr_reader :result, :waste_time
 
-  def initialize(quiz)
+  def initialize(quiz, correct_answers, max_minutes)
     @waste_time = 0
+    @max_minutes = max_minutes
     @quiz = quiz
+    @correct_answers = correct_answers
     @score = 0
     @result = ''
   end
 
   def self.create
-    quiz = {}
+    questions_answer = {}
     QUESTIONS.each do |question|
-      quiz[question.shift] = question
+      questions_answer[question.shift] = question
     end
 
-    new(quiz)
+    quiz = []
+    questions_answer.each do |question, answers|
+      temp_arr = []
+      answers.map { |answer| temp_arr << Answer.new(answer) }
+      quiz << Question.new(question, temp_arr)
+    end
+
+    correct_answers = CORRECT_ANSWERS
+    max_minutes = MAX_MINUTES
+
+    new(quiz, correct_answers, max_minutes)
   end
 
   def start_quiz
@@ -23,10 +35,11 @@ class Quiz
     start_time = Time.now.min
     user_answers = []
 
-    @quiz.each do |question, answers|
-      puts question
-      answers.each_with_index { |answer, i| puts "#{i + 1}. #{answer}" }
-
+    @quiz.each do |quiz|
+      puts quiz.question
+      quiz.answers.each_with_index do |answer, i|
+        puts "#{i + 1}. #{answer}"
+      end
       user_answers << ask_user
     end
 
@@ -49,12 +62,12 @@ class Quiz
 
   def check_score(user_answers)
     user_answers.each_with_index do |answer, i|
-      @score += 1 if answer == CORRECT_ANSWERS[i]
+      @score += 1 if answer == @correct_answers[i]
     end
   end
 
   def waste?(start_time)
-    Time.now.min - start_time > MAX_MINUTES
+    Time.now.min - start_time > @max_minutes
   end
 
   def user_result

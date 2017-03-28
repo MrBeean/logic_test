@@ -1,5 +1,7 @@
+require_relative 'lib/answer'
+require_relative 'lib/question'
 require_relative 'lib/quiz'
-require_relative 'lib/data'
+require_relative 'data/data'
 
 username = ARGV[0] == nil ? 'Анонимус' : ARGV[0]
 puts "Привет, #{username.encode('UTF-8')}"
