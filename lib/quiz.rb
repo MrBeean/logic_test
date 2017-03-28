@@ -18,9 +18,8 @@ class Quiz
 
     quiz = []
     questions_answer.each do |question, answers|
-      temp_arr = []
-      answers.map { |answer| temp_arr << Answer.new(answer) }
-      quiz << Question.new(question, temp_arr)
+      answers.map! { |answer| Answer.new(answer) }
+      quiz << Question.new(question, answers)
     end
 
     correct_answers = CORRECT_ANSWERS
