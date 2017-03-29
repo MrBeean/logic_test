@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<questions minutes="8">
+  <question>
+    <text>
+      Некоторые улитки являются горами. Все горы любят кошек. Следовательно, все улитки любят кошек:
+    </text>
+    <variants>
+      <variant>правильно</variant>
+      <variant right="true">не правильно</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>
+      Все крокодилы могут летать. Все великаны являются крокодилами. Следовательно, все великаны могут летать:
+    </text>
+    <variants>
+      <variant right="true">правильно</variant>
+      <variant>не правильно</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>
+      Некоторые кочаны капусты являются паровозами. Некоторые паровозы играют на рояле. Следовательно, некоторые
+       кочаны капусты играют на рояле:
+    </text>
+    <variants>
+      <variant>правильно</variant>
+      <variant right="true">не правильно</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>
+      Две рощи никогда не похожи друг на друга. Сосны и ели выглядят совершенно одинаково. Следовательно, сосны и ели
+       не являются двумя рощами:
+    </text>
+    <variants>
+      <variant right="true">правильно</variant>
+      <variant>не правильно</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>
+      Никто не может стать президентом, если у него красный нос. У всех людей нос красный. Cледовательно, никто не
+       может быть президентом:
+    </text>
+    <variants>
+      <variant right="true">правильно</variant>
+      <variant>не правильно</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>
+      Все вороны собирают картины. Некоторые собиратели картин сидят в птичьей клетке.
+       Следовательно, некоторые вороны сидят в птичьей клетке:
+    </text>
+    <variants>
+      <variant>правильно</variant>
+      <variant right="true">не правильно</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>
+      Только плохие люди обманывают или крадут. Екатерина — хорошая.
+    </text>
+    <variants>
+      <variant>Екатерина обманывает.</variant>
+      <variant>Екатерина крадет.</variant>
+      <variant>Екатерина не крадет.</variant>
+      <variant>Екатерина обманывает и крадет.</variant>
+      <variant>Екатерина не обманывает.</variant>
+      <variant right="true">Все умозакления не правильны.</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>Все воробьи не умеют летать. У всех воробьев есть ноги.</text>
+    <variants>
+      <variant>Воробьи без ног могут летать.</variant>
+      <variant>Некоторые воробьи не имеют ног.</variant>
+      <variant right="true">Все воробьи, у которых есть ноги — не могут летать.</variant>
+      <variant>Воробьи не умеют летать, потому что у них есть ноги.</variant>
+      <variant>Воробьи не умеют летать, и у них нет ног.</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>Некоторые люди — европейцы. Европейцы — трёхноги.</text>
+    <variants>
+      <variant right="true">У некоторых людей три ноги.</variant>
+      <variant>Европейцы, являющиеся людьми, иногда трёхноги.</variant>
+      <variant right="true">Люди с двумя ногами — не являются европейцами.</variant>
+      <variant right="true">Европейцы — это люди с тремя ногами.</variant>
+      <variant>Европейцы с двумя ногами иногда являются людьми.</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>Цветы — это зелёные животные. Цветы пьют водку.</text>
+    <variants>
+      <variant>Все зелёные животные пьют водку.</variant>
+      <variant>Все зелёные животные являются цветами.</variant>
+      <variant right="true">Некоторые зелёные животные пьют водку.</variant>
+      <variant right="true">Цветы, которые пьют водку, являются зелёными животными.</variant>
+      <variant>Зелёные животные не являются цветами.</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>Каждый квадрат круглый. Все квадраты красные.</text>
+    <variants>
+      <variant>Бывают квадраты с красными углам.</variant>
+      <variant>Бывают квадраты с круглыми углами.</variant>
+      <variant>Бывают круглые красные углы.</variant>
+      <variant>Углы и квадраты круглые и красные.</variant>
+      <variant>У красных квадратов круглые углы.</variant>
+      <variant right="true">Все умозаключения не правильны.</variant>
+    </variants>
+  </question>
+
+  <question>
+    <text>Хорошие начальники падают с неба. Плохие начальники могут петь.</text>
+    <variants>
+      <variant>Плохие начальники летят с неба вниз.</variant>
+      <variant>Хорошие начальники, которые умеют летать — могут петь.</variant>
+      <variant>Некоторые плохие начальники не могут петь.</variant>
+      <variant>Некоторые хорошие начальники плохи, так как они умеют петь.</variant>
+      <variant>Плохие начальники не падают с неба.</variant>
+      <variant right="true">Все умозаключения не правильны.</variant>
+    </variants>
+  </question>
+
+  <results>
+    <result range="0..2">
+      С логикой у вас очень слабо
+    </result>
+    <result range="3..6">
+      Логика не отсутствует, но, наверное, имеет смысл ее потренировать.
+    </result>
+    <result range="7..10">
+      Вполне приемлемый, говорящий о нормально развитых логических способностях
+    </result>
+    <result range="11..12">
+      Ваши логические способности хорошо развиты. Вас трудно убедить речами, в которых есть
+       логические неувязки. Вы видите многие ситуации «насквозь» и можете «предсказывать» поведение людей из
+       вашего окружения
+    </result>
+  </results>
+</questions>

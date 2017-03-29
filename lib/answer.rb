@@ -1,11 +1,16 @@
 class Answer
-  attr_reader :answer
+  attr_reader :text
 
-  def initialize(answer)
-    @answer = answer
+  def initialize(answer, right)
+    @text = answer
+    @right = right
   end
 
   def to_s
-    "#{@answer}"
+    @text
+  end
+
+  def right?
+    @right
   end
 end
