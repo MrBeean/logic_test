@@ -43,21 +43,22 @@ class Quiz
   def start_quiz
     reset_quiz!
 
-    start_time = Time.now.min
+    start_time = Time.now
 
     @questions.each do |question|
       puts question.question
       question.answers.each_with_index do |answer, i|
         puts "#{i + 1}. #{answer}"
       end
-      user_answer = ask_user.to_i
+      user_answer = ask_user(question)
       check_score(user_answer, question)
+      p @score
     end
 
     if waste?(start_time)
       abort 'Не уложились! Идите учиться!!!'
     else
-      @waste_time = Time.now.min - start_time
+      @waste_time = (Time.now - start_time) / 60
     end
   end
 
@@ -69,18 +70,43 @@ class Quiz
 
   private
 
-  def ask_user
-    user_input = ''
-    STDIN.gets.chomp if user_input.empty?
+  def ask_user(question)
+    user_input = 'answers'
+    user_input = STDIN.gets.chomp until correct?(user_input, question.answers.size)
+    user_input
+  end
+
+  def correct?(user_input, max_size)
+    answers_arr = user_input.split(',')
+
+    if answers_arr.length > 1
+      answers_arr.map! do |answer|
+        answer.to_i.to_s == answer && answer.to_i - 1 < max_size
+      end
+
+      answers_arr.select { |answer| !answer }.empty?
+    else
+      number = answers_arr[0].to_i
+      number.to_s == answers_arr[0] && number - 1 < max_size
+    end
   end
 
   def check_score(user_answer, question)
-    @score += 1 if question.answers[user_answer - 1].right?
-    p @score
+    answers_arr = user_answer.split(',')
+
+    if answers_arr.length > 1
+      answers_arr.map! do |answer|
+        question.answers[answer.to_i - 1].right?
+      end
+
+      @score += 1 if answers_arr.select { |answer| !answer }.empty?
+    else
+      @score += 1 if question.answers[answers_arr[0].to_i - 1].right?
+    end
   end
 
   def waste?(start_time)
-    Time.now.min - start_time > @max_minutes
+    (Time.now - start_time) / 60 > @max_minutes
   end
 
 
