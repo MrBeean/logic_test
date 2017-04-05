@@ -52,7 +52,6 @@ class Quiz
       end
       user_answer = ask_user(question)
       check_score(user_answer, question)
-      p @score
     end
 
     if waste?(start_time)
